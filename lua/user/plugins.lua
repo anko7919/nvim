@@ -24,3 +24,12 @@ require("lazy").setup({
     }, 
 })
 
+-- 括弧補間
+require("lazy").setup({
+    {
+        "windwp/nvim-autopairs", 
+        event = "InsertEnter", 
+        config = true, 
+    }, 
+})
+
