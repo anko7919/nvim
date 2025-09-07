@@ -8,8 +8,3 @@ vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", opts)
 -- Insert modeからNormal modeにもどる
 vim.keymap.set("i", "jk", "<Esc>", opts)
 
--- 括弧
--- vim.keymap.set("i", "(", "()<Left>", opts)
--- vim.keymap.set("i", "[", "[]<Left>", opts)
--- vim.keymap.set("i", "{", "{}<Left>", opts)
-

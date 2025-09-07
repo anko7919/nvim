@@ -41,7 +41,7 @@ require("lazy").setup({
             local opts = { noremap = true, silent = true }
 
             -- キーマップ設定
-            vim.keymap.set("n", "<leader>ff", builtin.fild_files, opts) -- ファイル検索
+            vim.keymap.set("n", "<leader>ff", builtin.find_files, opts) -- ファイル検索
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)  -- テキスト検索
             vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)    -- バッファ検索
             vim.keymap.set("n", "<leader>fr", builtin.oldfiles, opts)   -- 最近開いたファイル
