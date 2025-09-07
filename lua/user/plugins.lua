@@ -47,5 +47,14 @@ require("lazy").setup({
             vim.keymap.set("n", "<leader>fr", builtin.oldfiles, opts)   -- 最近開いたファイル
         end, 
     }, 
+
+    {
+        "nvim-lualine/lualine.nvim", 
+        dependencies = { "nvim-tree/nvim-web-devicons" }, 
+        lazy = false,
+        config = function()
+            require("lualine").setup()
+        end, 
+    }, 
 })
 
