@@ -75,7 +75,9 @@ require("lazy").setup({
                 { "<leader>fb", desc = "Buffer", mode = "n" }, 
                 { "<leader>fr", desc = "Recent File", mode = "n" }, 
 
-                { "<leader>t", desc = "Open Terminal", mode = "n" }, 
+                { "<leader>t", group = "Open Terminal" }, 
+                { "<leader>tr", desc = "Right", mode = "n" }, 
+                { "<leader>tb", desc = "Below", mode = "n" }, 
             })
         end, 
     }, 

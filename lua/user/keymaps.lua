@@ -5,7 +5,8 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", opts)
 
 -- 画面分割してターミナルを表示
-vim.keymap.set("n", "<leader>t", ":vs | vertical resize 70 | terminal<CR>")
+vim.keymap.set("n", "<leader>tr", ":vs | vertical resize 70 | terminal<CR>", opts)
+vim.keymap.set("n", "<leader>tb", ":sp | resize 10 | terminal", opts)
 
 -- INSERT MODE
 -- Insert modeからNormal modeにもどる
