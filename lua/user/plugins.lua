@@ -48,12 +48,35 @@ require("lazy").setup({
         end, 
     }, 
 
+    -- ステータスバー
     {
         "nvim-lualine/lualine.nvim", 
         dependencies = { "nvim-tree/nvim-web-devicons" }, 
         lazy = false,
         config = function()
             require("lualine").setup()
+        end, 
+    }, 
+
+    {
+        "folke/which-key.nvim", 
+        event = "VeryLazy", 
+        config = function()
+            local wk = require("which-key")
+
+            -- デフォルト設定
+            wk.setup({})
+
+            -- キーマップ登録
+            wk.add({
+                { "<leader>f", group = "File" }, -- group
+                { "<leader>ff", desc = "Find File", mode = "n" }, 
+                { "<leader>fg", desc = "Live Grep", mode = "n" }, 
+                { "<leader>fb", desc = "Buffer", mode = "n" }, 
+                { "<leader>fr", desc = "Recent File", mode = "n" }, 
+
+                { "<leader>t", desc = "Open Terminal", mode = "n" }, 
+            })
         end, 
     }, 
 })

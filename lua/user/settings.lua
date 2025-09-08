@@ -1,8 +1,5 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 
@@ -22,4 +19,11 @@ vim.opt.clipboard = "unnamedplus"   -- システムクリップボード共有
 -- 分割ウィンドウ
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- ヤンク時にハイライト
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
+    end, 
+})
 
