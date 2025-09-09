@@ -27,3 +27,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end, 
 })
 
+-- 保存時に自動でupdate
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*", 
+    callback = function()
+        vim.cmd("update")
+    end, 
+})
+
