@@ -89,9 +89,18 @@ require("lazy").setup({
         opts = {}, 
         dependencies = { { "echasnovski/mini.icons" , opts = {} } }, 
         lazy = false, 
-	config = function()
-	    require("oil").setup()
-	end, 
+        config = function()
+            require("oil").setup()
+        end, 
     }, 
+
+    -- Racket's
+    {
+        "benknoble/vim-racket", 
+        ft = { "racket", "scheme", }, 
+        config = function()
+            require("vim-racket").setup()
+        end,
+    },
 })
 
