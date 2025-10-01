@@ -102,5 +102,12 @@ require("lazy").setup({
             require("vim-racket").setup()
         end,
     },
+
+    -- Julia's
+    {
+        "JuliaEditorSupport/julia-vim", 
+        ft =  "julia", 
+        lazy = false
+    }, 
 })
 

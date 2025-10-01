@@ -6,7 +6,10 @@ vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", opts)
 
 -- 画面分割してターミナルを表示
 vim.keymap.set("n", "<leader>tr", ":vs | vertical resize 70 | terminal<CR>", opts)
-vim.keymap.set("n", "<leader>tb", ":sp | resize 10 | terminal", opts)
+vim.keymap.set("n", "<leader>tb", ":sp | resize 10 | terminal<CR>", opts)
+
+-- Oil.nvim起動
+vim.keymap.set("n", "<leader>o", ":Oil<CR>", opts)
 
 -- INSERT MODE
 -- Insert modeからNormal modeにもどる
