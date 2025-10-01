@@ -109,5 +109,15 @@ require("lazy").setup({
         ft =  "julia", 
         lazy = false
     }, 
+
+    -- vimtex 
+    {
+        "lervag/vimtex", 
+        lazy = false, 
+        ft = "tex", 
+        init = function()
+
+        end, 
+    }, 
 })
 
