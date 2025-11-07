@@ -1,6 +1,7 @@
 return {
     "mason-org/mason-lspconfig.nvim", 
-    dependencies = { "neovim/nvim-lspconfig" }, 
+    dependencies = { { "mason-org/mason.nvim", opts = {} }, 
+                    "neovim/nvim-lspconfig" }, 
     config = function()
         require("mason-lspconfig").setup({
             ensure_installed = { "rust_analyzer" }, 
@@ -11,7 +12,7 @@ return {
 
         -- 共通設定 (on_attach, capabilitiesなど)
         local on_attach = function(_, bufnr)
-            local opts = { buffer = bfnr, noremap = true, silent = true }
+            local opts = { buffer = bufnr, noremap = true, silent = true }
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
