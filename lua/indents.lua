@@ -64,3 +64,13 @@ vim.api.nvim_create_autocmd("FileType", {
     end, 
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "rust", 
+    callback = function()
+        vim.bo.shiftwidth = 4
+        vim.bo.tabstop = 4
+        vim.bo.expandtab = true
+        vim.bo.smartindent = true
+    end, 
+})
+
