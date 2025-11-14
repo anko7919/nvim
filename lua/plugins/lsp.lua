@@ -4,11 +4,12 @@ return {
                     "neovim/nvim-lspconfig" }, 
     config = function()
         require("mason-lspconfig").setup({
-            ensure_installed = { "rust_analyzer" }, 
+            ensure_installed = { "rust_analyzer", "clangd" }, 
             automatic_installation = true, 
         })
 
         local lspconfig = require("lspconfig")
+        local util = require("lspconfig/util")
 
         -- 共通設定 (on_attach, capabilitiesなど)
         local on_attach = function(_, bufnr)
@@ -30,6 +31,17 @@ return {
                     checkOnSave = true, 
                 }, 
             },
+        })
+
+        -- C/C++用設定
+        lspconfig.clangd.setup({
+            capabilities = capabilities, 
+            cmd = { 
+                "clangd", 
+                "--compile-commands-dir=/home/butsuribu/プログラム/Freshmen_cppversion/clangd_config/", 
+                "--clang-tidy", 
+            }, 
+            filetypes = { "c", "cpp" }, 
         })
     end, 
 }
