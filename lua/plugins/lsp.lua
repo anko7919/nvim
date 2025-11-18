@@ -38,7 +38,7 @@ return {
             capabilities = capabilities, 
             cmd = { 
                 "clangd", 
-                "--compile-commands-dir=/home/butsuribu/プログラム/Freshmen_cppversion/clangd_config/", 
+                "--compile-commands-dir=" .. vim.env.CLANGD_CONFIG_PATH, 
                 "--clang-tidy", 
             }, 
             filetypes = { "c", "cpp" }, 

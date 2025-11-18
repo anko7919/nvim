@@ -80,22 +80,6 @@ return {
         end, 
     }, 
 
-    -- Racket's
-    {
-        "benknoble/vim-racket", 
-        ft = { "racket", "scheme", }, 
-        config = function()
-            require("vim-racket").setup()
-        end,
-    },
-
-    -- Julia's
-    {
-        "JuliaEditorSupport/julia-vim", 
-        ft =  "julia", 
-        lazy = false
-    }, 
-
     -- vimtex 
     {
         "lervag/vimtex", 
