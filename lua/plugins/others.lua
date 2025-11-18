@@ -118,6 +118,11 @@ return {
         config = function()
             require("crates").setup()
         end, 
-    }
+    }, 
+
+    -- friendly-snippets
+    {
+        "rafamadriz/friendly-snippets", 
+    }, 
 }
 
