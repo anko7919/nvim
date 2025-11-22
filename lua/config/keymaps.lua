@@ -8,9 +8,6 @@ vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", opts)
 vim.keymap.set("n", "<leader>tr", ":vs | vertical resize 70 | terminal<CR>", opts)
 vim.keymap.set("n", "<leader>tb", ":sp | resize 10 | terminal<CR>", opts)
 
--- Oil.nvim起動
-vim.keymap.set("n", "<leader>o", ":Oil<CR>", opts)
-
 -- INSERT MODE
 -- Insert modeからNormal modeにもどる
 vim.keymap.set("i", "jk", "<Esc>", opts)
