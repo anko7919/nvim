@@ -18,15 +18,14 @@ vim.g.lazyvim_check_order = false
 
 require("lazy").setup({
 	spec = {
-        { "LazyVim/LazyVim" }, 
 		{ import = "plugins" },
 	},
 	defaults = {
 		lazy = false,
 		version = false,
 	},
-    checker = {
-        enabled = true, 
-        notify = true, 
-    }
+	checker = {
+		enabled = true,
+		notify = true,
+	},
 })
