@@ -66,7 +66,7 @@ return {
   cmd = { 
     'clangd', 
     "--compile-commands-dir=" .. vim.env.CLANGD_CONFIG_PATH, 
-    "--clang_tidy", 
+    "--clang-tidy", 
   },
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
   root_markers = {
