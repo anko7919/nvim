@@ -5,6 +5,7 @@ local lsp_servers = {
     "cmake", 
     "julials", 
     "pyright", 
+    "texlab", 
 }
 
 -- lsp_serversのそれぞれを読み込み
