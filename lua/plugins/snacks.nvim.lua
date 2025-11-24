@@ -5,18 +5,40 @@ return {
         lazy = false, 
         opts = {
             dashboard = {
-                row = 10, 
+                header = { "NeoVim", "v0.11.5" }, 
+                footer = { "v0.11.5" }, 
                 sections = {
                     {
-                        section = "terminal", 
-                        cmd = "chafa ~/.config/nvim/goch.png --format symbols --symbols=block --size=60x17 --stretch; sleep .1", 
-                        height = 17, 
-                        padding = 1, 
+                        {
+                            section = "header", 
+                        }, 
+                        {
+                            section = "terminal", 
+                            cmd = "chafa ~/.config/nvim/goch.png --format symbols --symbols=block --size=60x17 --stretch; sleep .1", 
+                            height = 17, 
+                            padding = 1, 
+                        }, 
+                        -- {
+                            -- section = "footer", 
+                        -- }, 
                     }, 
                     {
                         pane = 2, 
-                        { section = "keys", gap = 1, padding = 1 }, 
-                        { section = "startup" }, 
+                        { 
+                            section = "keys", 
+                            gap = 1, 
+                            padding = 1, 
+                            title = "Keymaps", 
+                        }, 
+                        { 
+                            section = "recent_files", 
+                            title = "Recent Files", 
+                            indent = 2, 
+                            padding = 1, 
+                        }, 
+                        {
+                            section = "startup", 
+                        }, 
                     }
                 }
             }
