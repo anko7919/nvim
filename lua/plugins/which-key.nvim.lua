@@ -16,9 +16,17 @@ return {
                 { "<leader>tr", desc = "Right", mode = "n" }, 
                 { "<leader>tb", desc = "Below", mode = "n" }, 
 
-                { "ds", group = "VimTex Deletion" }, 
+                { "ds", group = "VimTex Delete" }, 
+                { "dse", desc = "Delete Environment", mode = "n" }, 
+                { "dsc", desc = "Delete Command", mode = "n" }, 
+                { "dsd", desc = "Delete Delimiter", mode = "n" }, 
+                { "ds$", desc = "Delete Math", mode = "n" }, 
 
                 { "cs", group = "VimTex Change"}, 
+                { "csc", desc = "Change Environment", mode = "n" }, 
+                { "cse", desc = "Change Entironment", mode = "n" }, 
+                { "csd", desc = "Change Delimiter", mode = "n" }, 
+                { "cs$", desc = "Change Math", mode = "n" }, 
             })
         end, 
     }
