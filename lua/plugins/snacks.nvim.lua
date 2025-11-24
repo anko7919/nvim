@@ -43,9 +43,6 @@ return {
                 }
             }
         }, 
-        init = function()
-            require("snacks").setup({})
-        end, 
     }, 
 }
 
