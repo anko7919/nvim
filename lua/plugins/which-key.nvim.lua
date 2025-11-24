@@ -27,6 +27,9 @@ return {
                 { "cse", desc = "Change Entironment", mode = "n" }, 
                 { "csd", desc = "Change Delimiter", mode = "n" }, 
                 { "cs$", desc = "Change Math", mode = "n" }, 
+
+                { "<leader>spo", desc = "Split with Oil", mode = "n" }, 
+                { "<leader>vso", desc = "Split Vertically with Oil", mode = "n" }, 
             })
         end, 
     }
