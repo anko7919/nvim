@@ -15,6 +15,10 @@ return {
                 { "<leader>t", group = "Terminal" }, 
                 { "<leader>tr", desc = "Right", mode = "n" }, 
                 { "<leader>tb", desc = "Below", mode = "n" }, 
+
+                { "ds", group = "VimTex Deletion" }, 
+
+                { "cs", group = "VimTex Change"}, 
             })
         end, 
     }
