@@ -11,7 +11,7 @@ return {
             enable_deceleration = false, 
             acceleration_motions = {}, 
             acceleration_limit = 150, 
-            acceleration_table = { 7, 12, 17, 21, 24, 26, 28, 30, }, 
+            acceleration_table = { 2, 3, 6, 12, 16, 20, 24, 28, 31, 37, 45, }, 
             deceleration_table = { {200, 3}, {300, 7}, {450, 11}, {600, 15}, {750, 21}, {900, 9999} }, 
         })
     end
