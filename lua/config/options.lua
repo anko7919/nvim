@@ -23,5 +23,4 @@ vim.opt.splitright = true
 
 -- カラー
 vim.opt.cursorline = true
-vim.opt.termguicolors = true
 
