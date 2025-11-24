@@ -21,6 +21,7 @@ vim.opt.clipboard = "unnamedplus" -- システムクリップボード共有
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- ハイライト
+-- カラー
 vim.opt.cursorline = true
+vim.opt.termguicolors = true
 
