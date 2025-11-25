@@ -5,12 +5,21 @@ return {
         lazy = false, 
         opts = {
             dashboard = {
-                header = { "NeoVim", "v0.11.5" }, 
-                footer = { "v0.11.5" }, 
+                header = { "NeoVim" }, 
+                padding_top = 5, 
+                padding_bottom = 5, 
+                row = nil, 
+                col = nil, 
+                pane_gap = 4, 
                 sections = {
                     {
                         {
                             section = "header", 
+                            padding = 2, 
+                        }, 
+                        {
+                            section = "startup", 
+                            padding = 1, 
                         }, 
                         {
                             section = "terminal", 
@@ -18,9 +27,6 @@ return {
                             height = 17, 
                             padding = 1, 
                         }, 
-                        -- {
-                            -- section = "footer", 
-                        -- }, 
                     }, 
                     {
                         pane = 2, 
@@ -28,16 +34,16 @@ return {
                             section = "keys", 
                             gap = 1, 
                             padding = 1, 
-                            title = "Keymaps", 
+                            indent = 2, 
+                            -- title = string.format("v%d.%d.%d", vim.version().major, vim.version().minor, vim.version().patch), 
+                            title = "Menu", 
                         }, 
                         { 
-                            section = "recent_files", 
-                            title = "Recent Files", 
+                            section = "terminal",  
+                            title = "Git Status", 
+                            cmd = "git status --short --branch --renames", 
                             indent = 2, 
                             padding = 1, 
-                        }, 
-                        {
-                            section = "startup", 
                         }, 
                     }
                 }

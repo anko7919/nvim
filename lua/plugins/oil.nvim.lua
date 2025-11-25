@@ -7,7 +7,7 @@ return {
         dependencies = { { "nvim-mini/mini.icons", opts = {} } }, 
         lazy = false, 
         keys = {
-            { "<leader>o", "<cmd>Oil<cr>", mode = "n", desc = "Open Oil.nvim" }, 
+            { ";", "<cmd>Oil<cr>", mode = "n", desc = "Open Oil.nvim" }, 
         }, 
         config = function()
             require("oil").setup({
