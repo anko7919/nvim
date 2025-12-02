@@ -18,13 +18,13 @@ return {
                             padding = 2, 
                         }, 
                         {
-                            section = "startup", 
-                            padding = 1, 
-                        }, 
-                        {
                             section = "terminal", 
                             cmd = "chafa ~/.config/nvim/goch.png --format symbols --symbols=block --size=60x17 --stretch; sleep .1", 
                             height = 17, 
+                            padding = 1, 
+                        }, 
+                        {
+                            section = "startup", 
                             padding = 1, 
                         }, 
                     }, 
@@ -35,8 +35,6 @@ return {
                             gap = 1, 
                             padding = 1, 
                             indent = 2, 
-                            -- title = string.format("v%d.%d.%d", vim.version().major, vim.version().minor, vim.version().patch), 
-                            title = "Menu", 
                         }, 
                         { 
                             section = "terminal",  
