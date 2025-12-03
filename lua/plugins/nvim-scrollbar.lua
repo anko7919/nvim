@@ -1,6 +1,6 @@
 return {
-    "petertriho/nvim-scrollbar", 
-    event = { "BufReadPost", "BufNewFile", }, 
-    opts = {}, 
+    "petertriho/nvim-scrollbar",
+    event = { "BufReadPost", "BufNewFile", },
+    opts = {},
 }
 
