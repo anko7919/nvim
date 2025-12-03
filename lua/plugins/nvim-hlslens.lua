@@ -1,7 +1,12 @@
 return {
     "kevinhwang91/nvim-hlslens",
     event = "BufReadPost",
-    opts = {},
+    opts = {
+        auto_enable = true,
+        enable_incsearch = true,
+        nearest_only = true,
+
+    },
     keys = {
         {
             "n",
