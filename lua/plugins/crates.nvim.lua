@@ -1,8 +1,9 @@
 return {
     {
-        "saecki/crates.nvim", 
-        tag = "stable", 
-        opts = {}, 
-    }, 
+        "saecki/crates.nvim",
+        ft = "toml",
+        tag = "stable",
+        opts = {},
+    },
 }
 
