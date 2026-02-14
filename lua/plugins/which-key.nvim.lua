@@ -26,7 +26,7 @@ return {
                 { "ds$", desc = "Delete Math", mode = "n" }, 
 
                 -- VimTex Change
-                { "cs", group = "VimTex Change"}, 
+                { "cs", group = "VimTex Change" }, 
                 { "csc", desc = "Change Environment", mode = "n" }, 
                 { "cse", desc = "Change Entironment", mode = "n" }, 
                 { "csd", desc = "Change Delimiter", mode = "n" }, 
@@ -39,6 +39,9 @@ return {
                 -- Head/Tail of Line
                 { "<space>h", desc = "Go to Head of Line", mode = "n" },
                 { "<space>l", desc = "Go to Tile of Line", mode = "n" },
+
+                -- gitsigns
+                { "<leader>g", group = "Git", mode = "n" },
             })
         end, 
     }
