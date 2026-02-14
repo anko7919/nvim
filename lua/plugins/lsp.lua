@@ -28,7 +28,7 @@ return {
             servers = {
                 ["clangd"] = require("plugins.lsp.clangd"), 
                 ["cmake"] = require("plugins.lsp.cmake"), 
-                ["julails"] = require("plugins.lsp.cmake"), 
+                ["julials"] = require("plugins.lsp.julials"), 
                 ["pyright"] = require("plugins.lsp.pyright"), 
                 ["rust_analyzer"] = require("plugins.lsp.rust_analyzer"), 
                 ["texlab"] = require("plugins.lsp.texlab"), 
