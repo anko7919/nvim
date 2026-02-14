@@ -34,8 +34,7 @@ local function create_doxy_arguments(args, parent, user_args)
     if #arg_list ~= 0 then
         table.insert(params, " *")
     end
-    -- TODO: 現在正規表現がうまく動かないので修正が必要
-    -- 例えば`int *ptr`等で動かない
+    -- 正規表現により変数名を抽出
     for type_str, var_name in string.gmatch(arg_list, "([%w_:]*%s*[%w_:]+[%*%&]*)%s+[%*%&]*([%w_]+)%s*[^%w_]*") do
         table.insert(params, " * @param " .. var_name)
     end
