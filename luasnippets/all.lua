@@ -36,7 +36,8 @@ local function create_doxy_arguments(args, parent, user_args)
     end
     -- TODO: 現在正規表現がうまく動かないので修正が必要
     -- 例えば`int *ptr`等で動かない
-    for type_str, var_name in string.gmatch(arg_list, "([%w_:]+[%*%&]?)%s+([%w_]+)") do
+    for type_str, var_name in string.gmatch(arg_list, "([%w_]*%s*[%w_:]+)%s+([%w_]+)%s*[^%w]*") do
+        -- table.insert(params, "DEBUG: " .. type_str)
         table.insert(params, " * @param " .. var_name)
     end
     return params
