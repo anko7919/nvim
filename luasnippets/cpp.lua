@@ -29,12 +29,22 @@ ms = require("luasnip.nodes.multiSnippet").new_multisnippet
 
 -- 関数の引数からDoxygen対応コメントを生成する
 local function create_doxy_arguments(args, parent, user_args)
-    return " * " .. args
+    local arg_list = args[1][1]  -- snip の最初の insert_node から取得
+    local params = { "" }
+    if #arg_list ~= 0 then
+        table.insert(params, " *")
+    end
+    -- TODO: 現在正規表現がうまく動かないので修正が必要
+    -- 例えば`int *ptr`等で動かない
+    for type_str, var_name in string.gmatch(arg_list, "([%w_:]+[%*%&]?)%s+([%w_]+)") do
+        table.insert(params, " * @param " .. var_name)
+    end
+    return params
 end
 
 local function create_doxy_return(args, parent, user_args)
     if args[1][1] ~= "void" then
-        return " * @return"
+        return { " * ", " * @return", "", }
     else
         return ""
     end
@@ -45,15 +55,14 @@ return {
     s("fn", {
         t({ "/**", 
             " * @brief", 
-            "",
         }),
         f(create_doxy_arguments, { 2 }),
         t({
             "",
+            "",
         }),
         f(create_doxy_return, { 3 }),
         t({
-            "",
             " */",
             "auto ",
         }),
