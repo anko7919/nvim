@@ -1,6 +1,7 @@
 return {
     "rainbowhxch/accelerated-jk.nvim", 
-    lazy = false, 
+    lazy = true, 
+    event = "BufReadPost",
     keys = {
         { "j", "<plug>(accelerated_jk_gj)", mode = "n" }, 
         { "k", "<plug>(accelerated_jk_gk)", mode = "n" }, 

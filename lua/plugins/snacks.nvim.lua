@@ -1,10 +1,3 @@
-local math_quotes = {
-    "La beauté d’une théorie ne réside pas dans son utilité, mais\ndans sa cohérence.",
-}
-
--- Pick a random quote
-local quote = math_quotes[math.random(#math_quotes)]
-
 return {
     {
         "folke/snacks.nvim", 
@@ -57,9 +50,8 @@ return {
                         },
                         { 
                             section = "keys", 
-                            title = quote,
                             gap = 1, 
-                            padding = 2, 
+                            padding = 4, 
                             indent = 1, 
                             item = keys,
                         }, 
