@@ -15,6 +15,11 @@ return {
         -- <leader>snでスニペット編集メニューを表示
         vim.keymap.set("n", "<leader>sn", require("luasnip.loaders").edit_snippet_files, { desc = "Edit Snippets" })
 
+        ls.config.set_config({
+            history = true, --履歴保持
+            updateevents = "TextChanged,TextChangedI", -- functionNodeなどの再計算
+        })
+
         require("luasnip.loaders.from_lua").load("~/.config/nvim/lua/snippets/")
     end,
 }
