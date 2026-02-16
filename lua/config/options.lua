@@ -35,3 +35,6 @@ vim.opt.timeoutlen = 400
 
 -- LSPなどによる左右ズレ防止
 vim.opt.signcolumn = "yes"
+
+-- 長い行の可視化
+vim.opt.colorcolumn = "100"
