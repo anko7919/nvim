@@ -12,11 +12,25 @@ return {
         config = function()
             require("oil").setup({
                 columns = {
-                    "icon", 
-                    "permissions", 
-                    -- "size", 
-                    -- "mtime", 
-                }
+                    --"icon", 
+                    --"permissions", 
+                    "size", 
+                    "mtime", 
+                },
+                float = {
+                    padding = 2,
+                    max_width = 85,
+                    max_height = 25,
+                    border = "rounded",
+                },
+                keymaps = {
+                    ["<CR>"] = "actions.select",
+                    ["-"] = { "actions.parent", mode = "n" },
+                    ["_"] = { "actions.open_cwd", mode = "n" },
+                    ["q"] = { "actions.close", mode = "n" },
+                    ["gd"] = { "actions.cd", mode = "n" },
+                    ["g."] = { "actions.toggle_hidden", mode = "n" },
+                },
             })
         end, 
     }
