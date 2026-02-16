@@ -7,7 +7,7 @@ return {
         dependencies = { { "nvim-mini/mini.icons", opts = {} } }, 
         cmd = { "Oil" },
         keys = {
-            { ";", "<cmd>Oil<cr>", mode = "n", desc = "Open Oil.nvim" }, 
+            { ";", "<cmd>Oil --float<cr>", mode = "n", desc = "Open Oil.nvim" }, 
         }, 
         config = function()
             require("oil").setup({
@@ -19,8 +19,8 @@ return {
                 },
                 float = {
                     padding = 2,
-                    max_width = 85,
-                    max_height = 25,
+                    max_width = 0.85,
+                    max_height = 0.85,
                     border = "rounded",
                 },
                 keymaps = {
