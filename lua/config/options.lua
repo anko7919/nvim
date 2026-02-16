@@ -24,3 +24,14 @@ vim.opt.splitright = true
 -- カラー
 vim.opt.cursorline = true
 
+-- undo永続化
+vim.opt.undofile = true
+
+-- update時間
+vim.opt.updatetime = 250
+
+-- キーマップなどの待ち時間
+vim.opt.timeoutlen = 400
+
+-- LSPなどによる左右ズレ防止
+vim.opt.signcolumn = "yes"
