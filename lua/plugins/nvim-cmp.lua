@@ -20,6 +20,8 @@ return {
     -- Register nvim-cmp lsp capabilities
     vim.lsp.config("*", { capabilities = require("cmp_nvim_lsp").default_capabilities() })
 
+    local luasnip = require("luasnip") -- LuaSnip
+
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
@@ -28,6 +30,11 @@ return {
       auto_brackets = {}, -- configure any filetype to auto add brackets
       completion = {
         completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
+      },
+      snippet = {
+          expand = function(args)
+              luasnip.lsp_expand(args.body)
+          end,
       },
       preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None,
       mapping = cmp.mapping.preset.insert({
@@ -51,6 +58,7 @@ return {
         { name = "lazydev" },
         { name = "nvim_lsp" },
         { name = "path" },
+        { name = "luasnip" },
       }, {
         { name = "buffer" },
       }),

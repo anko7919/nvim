@@ -20,7 +20,7 @@ return {
         {
             "N",
             function ()
-                vim.cmd("normal! " .. vim.v.count1 .. "n")
+                vim.cmd("normal! " .. vim.v.count1 .. "N")
                 require("hlslens").start()
             end,
             mode = "n",
