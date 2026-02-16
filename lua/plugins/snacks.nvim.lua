@@ -14,11 +14,11 @@ return {
                     ---@type snacks.dashboard.Item[]
                     keys = {
                         { icon = "* ", key = "f", desc = "Find File", action = ":Telescope find_files" },
-                        { icon = "* ", key = "n", desc = "New File", action = ":ene | startinsert" },
-                        { icon = "* ", key = "g", desc = "Find Text", action = ":Telescope live_grep" },
+                        { icon = "* ", key = "p", desc = "Projects", action = ":lua Snacks.dashboard.pick('projects')" },
+                        { icon = "* ", key = "s", desc = "Restore Session", action = ":lua Snacks.dashboard.pick('sessions')" },
                         { icon = "* ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+                        { icon = "* ", key = "g", desc = "Find Text", action = ":Telescope live_grep" },
                         { icon = "* ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-                        { icon = "* ", key = "s", desc = "Edit Snippets", action = ":lua require('luasnip.loaders').edit_snippet_files('~/.config/nvim/lua/snippets/')" },
                         { icon = "* ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
                         { icon = "* ", key = "q", desc = "Quit", action = ":qa" },
                     },
