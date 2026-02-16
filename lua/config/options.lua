@@ -11,8 +11,8 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
 -- スクロール
-vim.opt.scrolloff = 5
-vim.opt.sidescrolloff = 5
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
 
 -- クリップボード
 vim.opt.clipboard = "unnamedplus" -- システムクリップボード共有
