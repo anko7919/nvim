@@ -1,6 +1,5 @@
 return {
     "monaqa/dial.nvim",
-    event = "BufReadPost",
     keys = {
         -- Normal Mode
         { "<C-a>", function() require("dial.map").manipulate("increment", "normal") end, mode = "n", },
