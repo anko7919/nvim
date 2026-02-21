@@ -13,6 +13,8 @@ return {
                 { "<leader>fb", desc = "Buffer", mode = "n" }, 
                 { "<leader>fr", desc = "Recent File", mode = "n" }, 
 
+                { "<leader>l", group = "Telescope LSP" },
+
                 -- Terminal
                 { "<leader>t", group = "Terminal" }, 
                 { "<leader>tr", desc = "Right", mode = "n" }, 

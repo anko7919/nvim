@@ -11,6 +11,11 @@ return {
             { "<leader>fg", "<cmd>Telescope live_grep<cr>", mode = { "n" }, desc = "Telescope live grep" }, 
             { "<leader>fb", "<cmd>Telescope buffers<cr>", mode = { "n" }, desc = "Telescope buffers" }, 
             { "<leader>fh", "<cmd>Telescope help_tags<cr>", mode = { "n" }, desc = "Telescope help tags" }, 
+
+            { "<leader>sr", "<cmd>Telescope lsp_references<cr>", mode = { "n" }, desc = "Lists LSP references", },
+            { "<leader>sD", "<cmd>Telescope diagnostics<cr>", mode = { "n" }, desc = "Lists Diagnostics", },
+            { "<leader>si", "<cmd>Telescope lsp_implementations<cr>", mode = { "n" }, desc = "Goto the implementation", },
+            { "<leader>sd", "<cmd>Telescope lsp_definitions<cr>", mode = { "n" }, desc = "Goto the definition", },
         }
     }
 }
