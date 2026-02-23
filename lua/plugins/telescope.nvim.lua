@@ -16,6 +16,8 @@ return {
             { "<leader>sD", "<cmd>Telescope diagnostics<cr>", mode = { "n" }, desc = "Lists Diagnostics", },
             { "<leader>si", "<cmd>Telescope lsp_implementations<cr>", mode = { "n" }, desc = "Goto the implementation", },
             { "<leader>sd", "<cmd>Telescope lsp_definitions<cr>", mode = { "n" }, desc = "Goto the definition", },
+            
+            { "<leader>bl", "<cmd>Telescope buffers<cr>", mode = { "n" }, desc = "Lists open buffers", },
         }
     }
 }
