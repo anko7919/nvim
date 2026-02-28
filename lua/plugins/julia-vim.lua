@@ -1,9 +1,7 @@
 return {
     {
-        "JuliaEditorSupport/julia-vim", 
-        lazy = false, 
-        ft = "julia", 
-        event = "BufReadPost", 
-    }, 
+        "JuliaEditorSupport/julia-vim",
+        lazy = false,
+    },
 }
 
