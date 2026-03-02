@@ -47,8 +47,14 @@ return {
     end, 
 
     config = function(_, opts)
+        local navic = require("nvim-navic")
+
         for server, server_opts in pairs(opts.servers) do 
-            vim.lsp.config(server, server_opts)
+            vim.lsp.config(server, server_opts, {
+                on_attach = function(client, bufnr)
+                    navic.attach(client, bufnr)
+                end,
+            })
             vim.lsp.enable(server)
         end
     end, 
