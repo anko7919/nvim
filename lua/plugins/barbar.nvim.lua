@@ -5,8 +5,12 @@ return {
         "lewis6991/gitsigns.nvim",
     },
     keys = {
-        { "H", "<cmd>BufferPrevious<cr>", mode = "n", },
-        { "L", "<cmd>BufferNext<cr>", mode = "n", },
+        { "<a-h>", "<cmd>BufferPrevious<cr>", mode = "n", },
+        { "<a-l>", "<cmd>BufferNext<cr>", mode = "n", },
+        { "<a-,>", "<cmd>BufferMoveNext<cr>", mode = "n", },
+        { "<a-.>", "<cmd>BufferMovePrevious<cr>", mode = "n", },
+        { "<a-c>", "<cmd>BufferClose<cr>", mode = "n", },
+        { "<a-C>", "<cmd>BufferCloseAllButCurrent<cr>", mode = "n", },
     },
     opts = {
         animation = false,
@@ -16,7 +20,11 @@ return {
             filetype = { enabled = false, },
             preset = "slanted",
             modified = { button = "*" },
-            gitsigns = { enabled = false, },
+            gitsigns = {
+                added = { enable = true, icon = "+" },
+                changed = { enable = true, icon = "~" },
+                deleted = { enable = true, icon = "-" },
+            },
         },
     },
 }
