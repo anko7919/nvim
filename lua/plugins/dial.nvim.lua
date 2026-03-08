@@ -26,6 +26,11 @@ return {
                     word = false,
                     cyclic = true,
                 },
+                augend.constant.new{
+                    elements = { "==", "!=", },
+                    word = false,
+                    cyclid = true,
+                }
             },
         }
     end
