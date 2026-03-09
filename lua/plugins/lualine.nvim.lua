@@ -16,10 +16,36 @@ return {
     opts = {
         sections = {
             lualine_a = { "mode" },
-            lualine_b = { "branch", "diff" },
-            lualine_c = { "diagnostics" },
-            lualine_x = { function() return "🕑 " .. os.date("%H:%M") end, },
-            lualine_y = {},
+            lualine_b = {
+                "branch",
+            },
+            lualine_c = {
+                {
+                    "filename",
+                    file_status = true,
+                    newfile_status = false,
+                    path = 0,
+                    symbols = {
+                        modified = "[+]",
+                        readonly = "[-]",
+                        unnamed = "[No Name]",
+                        newfile = "[New]",
+                    }
+                }
+            },
+            lualine_x = { 
+                {
+                    "diagnostics",
+                    sources = { "nvim_lsp", "vim_lsp" },
+                    sections = { "error", "warn" },
+                    symbols = { error = "E", warn = "W", info = "I", hint = "H" },
+                    always_visible = false,
+                },
+            },
+            lualine_y = {
+                "diff",
+                function() return "🕑 " .. os.date("%H:%M") end,
+            },
             lualine_z = {},
         },
     }, 
