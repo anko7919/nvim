@@ -91,8 +91,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- treesitterによるハイライト
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "cpp", "c", "tex", "julia", "rust", "lua", "python", },
-    callback = function() vim.treesitter.start() end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+    -- pattern = { "cpp", "c", "julia", "rust", "lua", "python", },
+    -- callback = function() vim.treesitter.start() end,
+-- })
 
