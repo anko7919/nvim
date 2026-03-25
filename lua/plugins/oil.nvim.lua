@@ -10,7 +10,11 @@ return {
             { "-", "<cmd>Oil --float<cr>", mode = "n", desc = "Open Oil.nvim" }, 
         }, 
         config = function()
-            require("oil").setup({
+            local oil = require("oil")
+            oil.setup({
+                delete_on_trash = true,
+                default_file_explorer = true,
+                watch_for_changes = true,
                 columns = {
                     --"icon", 
                     --"permissions", 
@@ -30,6 +34,7 @@ return {
                     ["q"] = { "actions.close", mode = "n" },
                     ["gd"] = { "actions.cd", mode = "n" },
                     ["g."] = { "actions.toggle_hidden", mode = "n" },
+                    ["+"] = { callback = oil.save, mode = "n" },
                 },
             })
         end, 
