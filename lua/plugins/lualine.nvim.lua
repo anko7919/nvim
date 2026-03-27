@@ -46,7 +46,7 @@ return {
                 "diff",
                 function() return "🕑 " .. os.date("%H:%M") end,
             },
-            lualine_z = {},
+            lualine_z = { "progress" },
         },
     }, 
 }
