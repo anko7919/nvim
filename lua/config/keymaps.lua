@@ -5,8 +5,8 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", opts)
 
 -- 画面分割してターミナルを表示
-vim.keymap.set("n", "<leader>tr", ":vs | vertical resize 70 | terminal<CR>", opts)
-vim.keymap.set("n", "<leader>tb", ":sp | resize 10 | terminal<CR>", opts)
+vim.keymap.set("n", "<leader>tr", ":vs | terminal<CR>", opts)
+vim.keymap.set("n", "<leader>tb", ":sp | terminal<CR>", opts)
 
 -- 画面分割してOil.nvimを起動
 vim.keymap.set("n", "<leader>spo", "<cmd>sp<cr><cmd>Oil<cr>")
