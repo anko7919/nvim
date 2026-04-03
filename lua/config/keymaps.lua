@@ -12,10 +12,6 @@ vim.keymap.set("n", "<leader>tb", ":sp | terminal<CR>", opts)
 vim.keymap.set("n", "<leader>spo", "<cmd>sp<cr><cmd>Oil<cr>")
 vim.keymap.set("n", "<leader>vso", "<cmd>vs<cr><cmd>Oil<cr>")
 
--- 行頭・行末に移動
-vim.keymap.set("n", "<space>h", "^")
-vim.keymap.set("n", "<space>l", "$")
-
 -- INSERT MODE
 -- Insert modeからNormal modeにもどる
 vim.keymap.set("i", "jk", "<Esc>", opts)
