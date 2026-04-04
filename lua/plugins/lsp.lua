@@ -5,6 +5,7 @@ return {
         "mason.nvim",
         { "mason-org/mason-lspconfig.nvim", config = function() end },
         "LazyVim",
+        "folke/lazydev.nvim",
     },
     opts = function()
         local ret = {
@@ -32,7 +33,6 @@ return {
                 ["pyright"] = require("plugins.lsp.pyright"),
                 ["rust_analyzer"] = require("plugins.lsp.rust_analyzer"),
                 ["texlab"] = require("plugins.lsp.texlab"),
-                ["lua_ls"] = require("plugins.lsp.lua_ls"),
             },
 
             keys = {
@@ -48,6 +48,8 @@ return {
     end,
 
     config = function(_, opts)
+        -- Luaはlazydev.nvimが設定してくれるので別で設定
+        vim.lsp.enable("lua_ls")
         for server, server_opts in pairs(opts.servers) do
             vim.lsp.config(server, server_opts)
             vim.lsp.enable(server)
