@@ -29,7 +29,7 @@ return {
 
                 -- VimTex Change
                 { "cs", group = "VimTex Change" }, 
-                { "csc", desc = "Change Environment", mode = "n" }, 
+                { "csc", desc = "Change Command", mode = "n" }, 
                 { "cse", desc = "Change Entironment", mode = "n" }, 
                 { "csd", desc = "Change Delimiter", mode = "n" }, 
                 { "cs$", desc = "Change Math", mode = "n" }, 
@@ -37,10 +37,6 @@ return {
                 -- Oil
                 { "<leader>spo", desc = "Split with Oil", mode = "n" }, 
                 { "<leader>vso", desc = "Split Vertically with Oil", mode = "n" }, 
-
-                -- Head/Tail of Line
-                { "<space>h", desc = "Go to Head of Line", mode = "n" },
-                { "<space>l", desc = "Go to Tile of Line", mode = "n" },
 
                 -- gitsigns
                 { "<leader>g", group = "Git", mode = "n" },
