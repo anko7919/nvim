@@ -10,7 +10,7 @@ return {
         local keymap_opt = { silent = true, }
         vim.keymap.set({ "i", }, "<C-k>", function() ls.expand() end, keymap_opt)
         vim.keymap.set({ "i", "s", }, "<C-l>", function() ls.jump( 1) end, keymap_opt)
-        vim.keymap.set({ "i", "s", }, "<C-j>", function() ls.jump(-1) end, keymap_opt)
+        vim.keymap.set({ "i", "s", }, "<C-h>", function() ls.jump(-1) end, keymap_opt)
 
         -- <leader>snでスニペット編集メニューを表示
         vim.keymap.set("n", "<leader>sn", require("luasnip.loaders").edit_snippet_files, { desc = "Edit Snippets" })
