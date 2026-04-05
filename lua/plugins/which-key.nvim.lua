@@ -38,6 +38,9 @@ return {
 
                 -- gitsigns
                 { "<leader>g", group = "Git", mode = "n" },
+
+                -- comments
+                { "gc", group = "Comment", mode = "n" },
             })
         end,
     }
