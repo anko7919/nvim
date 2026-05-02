@@ -1,6 +1,6 @@
 return {
-    "nvim-lualine/lualine.nvim", 
-    dependencies = { { "nvim-mini/mini.icons", opts = {} } }, 
+    "nvim-lualine/lualine.nvim",
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     events = {
         'WinEnter',
         'BufEnter',
@@ -33,7 +33,7 @@ return {
                     }
                 }
             },
-            lualine_x = { 
+            lualine_x = {
                 {
                     "diagnostics",
                     sources = { "nvim_lsp", "vim_lsp" },
@@ -44,10 +44,9 @@ return {
             },
             lualine_y = {
                 "diff",
-                function() return "🕑 " .. os.date("%H:%M") end,
             },
             lualine_z = { "progress" },
         },
-    }, 
+    },
 }
 
