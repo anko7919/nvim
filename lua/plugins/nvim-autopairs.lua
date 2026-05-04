@@ -24,18 +24,21 @@ return {
                 Rule("\\%w+[%[%(]$", "", "tex")
                     :use_regex(true)
                     :replace_endpair(function(opts)
-                        local ret = "\\"
                         local baskslash_pos = opts.prev_char:match(".*()\\")
                         if baskslash_pos == nil then
                             return ""
                         end
-                        local sizestr = string.sub(opts.prev_char, baskslash_pos + 1, -2)
+                        local cmdname = string.sub(opts.prev_char, baskslash_pos + 1, -2)
                         -- ここでは"(" (resp. "[") が自動で補完されることを前提としているので
                         -- あえて")" (resp. "]") を追加していない．
-                        if sizestr == "left" then
-                            return ret .. "right"
+                        if cmdname == "left" then
+                            return "\\right"
+                        elseif string.match(cmdname, "bigg?l") ~= nil or string.match(cmdname, "Bigg?l") then
+                            return "\\" .. string.sub(cmdname, 1, -2) .. "r"
+                        elseif string.match(cmdname, "bigg?") ~= nil or string.match(cmdname, "Bigg?") then
+                            return "\\" .. cmdname
                         else
-                            return ret .. sizestr
+                            return "" -- サイズ指定でない場合は特に何もしない
                         end
                     end),
 
