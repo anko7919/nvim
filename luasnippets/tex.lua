@@ -3,7 +3,7 @@ local s = u.s
 local t = u.t
 local i = u.i
 
-local function init_documentclass_opts(args, parent, user_args)
+local function init_documentclass_opts(args, _, _)
     if args[1][1] == "jlreq" then
         return "[jafontscale=0.9247]"
     else
@@ -19,24 +19,32 @@ return {
         t({"", ""}),
         t({
             "",
-            "\\usepackage{mathtools}",
             "\\usepackage{amsthm}",
-            "\\usepackage[math-style=ISO,bold-style=ISO]{unicode-math}",
             "\\usepackage[default,varnothing]{fontsetup}",
             "\\usepackage{luatexja}",
-            "\\usepackage{fontspec}",
-            "\\usepackage{luatexja-fontspec}",
             "",
-            "% Selif",
-            "\\setmainjfont{Noto Selif CJK JP}",
-            "\\setmainfont{TeX Gyre Termes}",
-            "\\setmathfont{STIX Two Math}",
-            "% Sans",
-            "% \\setmainjfont{Noto Sans CJK JP}",
-            "% \\setmainfont{Noto Sans}",
-            "% \\setmathfont{STIX Two Math}",
+            "\\usepackage[",
+        }),
+        i(2),
+        t({
+            "]{dorayaki-font}",
+            "\\usepackage{dorayaki-math}",
+            "\\usepackage[language=",
+        }),
+        i(3),
+        t({
+            "]{dorayaki-thm}",
+            "",
+            "",
+        }),
+        t("\\title{"), i(4), t({ "}", "" }),
+        t("\\author{"), i(5), t({ "}", "" }),
+        t("\\date{"), i(6), t({ "}", "" }),
+        t({
             "",
             "\\begin{document}",
+            "",
+            "\\maketitle",
             "",
             "\\end{document}",
             "",
