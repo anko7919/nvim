@@ -19,10 +19,9 @@ return {
         t({"", ""}),
         t({
             "",
-            "\\usepackage{amsthm}",
+            "\\usepackage{mathtools}",
             "\\usepackage[default,varnothing]{fontsetup}",
             "\\usepackage{luatexja}",
-            "",
             "\\usepackage[",
         }),
         i(2),

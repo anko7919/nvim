@@ -14,33 +14,17 @@ return {
                 Rule("(", ")"):with_cr(cond.done()),
                 Rule("{", "}"):with_cr(cond.done()),
                 Rule("[", "]"):with_cr(cond.done()),
-                Rule("\"", "\""):with_move(cond.after_text("\"")),
-                Rule("'", "'", "-tex"):with_move(cond.after_text("'")),
+                Rule("\"", "\"", { "-tex", "-latex" })
+                    :with_move(cond.after_text("\"")),
+                Rule("'", "'", { "-tex", "-latex" })
+                    :with_move(cond.after_text("'")),
 
                 -- TeX
-                Rule("$", "$", "tex"):with_move(cond.after_text("$")),
-                Rule("`", "'", "tex"),
-                -- \left(\right) のような括弧
-                Rule("\\%w+[%[%(]$", "", "tex")
-                    :use_regex(true)
-                    :replace_endpair(function(opts)
-                        local baskslash_pos = opts.prev_char:match(".*()\\")
-                        if baskslash_pos == nil then
-                            return ""
-                        end
-                        local cmdname = string.sub(opts.prev_char, baskslash_pos + 1, -2)
-                        -- ここでは"(" (resp. "[") が自動で補完されることを前提としているので
-                        -- あえて")" (resp. "]") を追加していない．
-                        if cmdname == "left" then
-                            return "\\right"
-                        elseif string.match(cmdname, "bigg?l") ~= nil or string.match(cmdname, "Bigg?l") then
-                            return "\\" .. string.sub(cmdname, 1, -2) .. "r"
-                        elseif string.match(cmdname, "bigg?") ~= nil or string.match(cmdname, "Bigg?") then
-                            return "\\" .. cmdname
-                        else
-                            return "" -- サイズ指定でない場合は特に何もしない
-                        end
-                    end),
+                Rule("$", "$", { "tex", "latex" })
+                    :with_move(cond.after_text("$")),
+                Rule("`", "'", { "tex", "latex" }),
+                Rule("'", "", { "tex", "latex" }),
+                Rule("\"", "", { "tex", "latex" }),
 
                 -- Bash
                 Rule("then%s*", "fi", { "bash", "sh" }):use_regex(true):end_wise(function(opts)
@@ -50,6 +34,10 @@ return {
                     return string.match(opts.line, "^%s*for") ~= nil
                             or string.match(opts.line, "^%s*while") ~= nil
                 end),
+
+                -- C++
+                Rule("/*", " */", { "c", "cpp" })
+                    :with_cr(cond.none())
             })
         end,
     }

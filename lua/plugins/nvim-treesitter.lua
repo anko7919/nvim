@@ -31,6 +31,7 @@ return {
       "python",
       "regex",
       "julia",
+      "rust",
     },
   },
   ---@param opts lazyvim.TSConfig
