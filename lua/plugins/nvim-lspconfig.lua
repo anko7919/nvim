@@ -4,10 +4,16 @@ return {
     dependencies = {
         "mason.nvim",
         { "mason-org/mason-lspconfig.nvim", config = function() end },
-        "LazyVim",
         "folke/lazydev.nvim",
+        "hrsh7th/cmp-nvim-lsp",
     },
     opts = function()
+        local colors = {
+            error = vim.api.nvim_get_hl(0, { name = "DiagnosticError" }),
+            warn = vim.api.nvim_get_hl(0, { name = "DiagnosticWarn" }),
+            hint = vim.api.nvim_get_hl(0, { name = "DiagnosticHint" }),
+            info = vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" }),
+        }
         local ret = {
             diagnostics = {
                 underline = true,
@@ -16,10 +22,10 @@ return {
             severity_sort = true,
             signs = {
                 text = {
-                    [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
-                    [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
-                    [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
-                    [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
+                    [vim.diagnostic.severity.ERROR] = colors.error,
+                    [vim.diagnostic.severity.WARN] = colors.warn,
+                    [vim.diagnostic.severity.HINT] = colors.hint,
+                    [vim.diagnostic.severity.INFO] = colors.info,
                 },
             },
             inlay_hints = {
@@ -50,7 +56,9 @@ return {
     config = function(_, opts)
         -- Luaはlazydev.nvimが設定してくれるので別で設定
         vim.lsp.enable("lua_ls")
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
         for server, server_opts in pairs(opts.servers) do
+            server_opts.capabilities = capabilities
             vim.lsp.config(server, server_opts)
             vim.lsp.enable(server)
         end
