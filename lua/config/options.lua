@@ -15,7 +15,7 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 25
 
 -- クリップボード
-vim.opt.clipboard = "unnamedplus" -- システムクリップボード共有
+vim.opt.clipboard = "unnamedplus"
 
 -- 分割ウィンドウ
 vim.opt.splitbelow = true
@@ -38,3 +38,4 @@ vim.opt.signcolumn = "yes"
 
 -- 長い行の可視化
 vim.opt.colorcolumn = "100"
+

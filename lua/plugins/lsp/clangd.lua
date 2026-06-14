@@ -63,10 +63,10 @@ end
 
 ---@type vim.lsp.Config
 return {
-  cmd = { 
-    'clangd', 
-    "--compile-commands-dir=" .. vim.env.CLANGD_CONFIG_PATH, 
-    "--clang-tidy", 
+  cmd = {
+    'clangd',
+    -- "--compile-commands-dir=" .. vim.env.CLANGD_CONFIG_PATH, 
+    "--clang-tidy",
   },
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
   root_markers = {
