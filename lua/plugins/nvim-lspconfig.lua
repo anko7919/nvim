@@ -40,15 +40,6 @@ return {
                 ["rust_analyzer"] = require("plugins.lsp.rust_analyzer"),
                 ["texlab"] = require("plugins.lsp.texlab"),
             },
-
-            keys = {
-                { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
-                { "gr", vim.lsp.buf.references, desc = "References", nowait = true },
-                { "K", function() return vim.lsp.buf.hover() end, desc = "Hover" },
-                { "<c-k>", function() return vim.lsp.buf.signature_help() end, mode = "i", desc = "Signature Help", has = "signatureHelp" },
-                { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "x" }, has = "codeAction" },
-                { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
-            },
         }
         return ret
     end,

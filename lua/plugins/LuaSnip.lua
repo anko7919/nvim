@@ -12,9 +12,6 @@ return {
         vim.keymap.set({ "i", "s", }, "<C-l>", function() ls.jump( 1) end, keymap_opt)
         vim.keymap.set({ "i", "s", }, "<C-h>", function() ls.jump(-1) end, keymap_opt)
 
-        -- <leader>snでスニペット編集メニューを表示
-        vim.keymap.set("n", "<leader>sn", require("luasnip.loaders").edit_snippet_files, { desc = "Edit Snippets" })
-
         ls.config.set_config({
             history = true, --履歴保持
             updateevents = "TextChanged,TextChangedI", -- functionNodeなどの再計算

@@ -15,7 +15,7 @@ return {
 
             -- LSP
             { "<leader>sr", require("telescope.builtin").lsp_references, mode = { "n" }, desc = "Lists LSP references", },
-            { "<leader>sD", require("telescope.builtin").diagnostics, mode = { "n" }, desc = "Lists Diagnostics", },
+            { "<leader>sg", require("telescope.builtin").diagnostics, mode = { "n" }, desc = "Lists Diagnostics", },
             { "<leader>si", require("telescope.builtin").lsp_implementations, mode = { "n" }, desc = "Goto the implementation", },
             { "<leader>sd", require("telescope.builtin").lsp_definitions, mode = { "n" }, desc = "Goto the definition", },
             { "<leader>st", require("telescope.builtin").lsp_type_definitions, mode = { "n" }, desc = "Go to Type definition", },

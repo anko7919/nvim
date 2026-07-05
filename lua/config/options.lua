@@ -15,7 +15,7 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 25
 
 -- クリップボード
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 
 -- 分割ウィンドウ
 vim.opt.splitbelow = true
@@ -37,5 +37,8 @@ vim.opt.timeoutlen = 400
 vim.opt.signcolumn = "yes"
 
 -- 長い行の可視化
-vim.opt.colorcolumn = "100"
+-- vim.opt.colorcolumn = "100"
+
+-- cmdの高さ
+vim.o.cmdheight = 1
 

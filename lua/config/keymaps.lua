@@ -22,6 +22,7 @@ vim.keymap.set("n", "<c-l>", "<c-w>l", opts)
 vim.keymap.set("n", "<s-h>", "<cmd>bprevious<cr>", opts)
 vim.keymap.set("n", "<s-l>", "<cmd>bnext<cr>", opts)
 vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", opts)
+vim.keymap.set("n", "<leader>bD", "<cmd>bdelete!<cr>", opts)
 
 -- diagnostics表示
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
