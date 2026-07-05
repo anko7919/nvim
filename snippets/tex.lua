@@ -2,11 +2,15 @@ local u = require("luasnip_utils")
 local s = u.s
 local t = u.t
 local i = u.i
+local c = u.c
 
 return {
-    s("init",{
+    s("init", {
         t("\\documentclass{"),
-        i(count_template_index()),
+        c(count_template_index(), {
+            t("dorayaki-article"),
+            t("dorayaki-jarticle"),
+        }),
         t({
             "}",
             "",
@@ -17,13 +21,11 @@ return {
         i(count_template_index()),
         t({
             "}",
-            "",
             "\\author{",
         }),
         i(count_template_index()),
         t({
             "}",
-            "",
             "\\date{",
         }),
         i(count_template_index()),

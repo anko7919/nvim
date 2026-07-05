@@ -3,12 +3,12 @@ local index_table = {} ---@table
 
 function count_template_index(key)
     key = key or nil
-    if key ~= nil then
+    if key == nil then
         index_counter = index_counter + 1
         return index_counter
     elseif index_table[key] == nil then
         index_counter = index_counter + 1
-        index_table[key] = index_counter
+        rawset(index_table, key, index_counter)
         return index_counter
     else
         return index_table[key]
