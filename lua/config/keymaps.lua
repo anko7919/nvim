@@ -12,12 +12,6 @@ vim.keymap.set("n", "<leader>tb", ":sp | terminal<CR>", opts)
 vim.keymap.set("n", "<leader>spo", "<cmd>sp<cr><cmd>Oil<cr>", opts)
 vim.keymap.set("n", "<leader>vso", "<cmd>vs<cr><cmd>Oil<cr>", opts)
 
--- ウィンドウ移動
-vim.keymap.set("n", "<c-h>", "<c-w>h", opts)
-vim.keymap.set("n", "<c-j>", "<c-w>j", opts)
-vim.keymap.set("n", "<c-k>", "<c-w>k", opts)
-vim.keymap.set("n", "<c-l>", "<c-w>l", opts)
-
 -- バッファ
 vim.keymap.set("n", "<s-h>", "<cmd>bprevious<cr>", opts)
 vim.keymap.set("n", "<s-l>", "<cmd>bnext<cr>", opts)

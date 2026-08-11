@@ -14,8 +14,6 @@ return {
         t({
             "}",
             "",
-            "\\begin{document}",
-            "",
             "\\title{",
         }),
         i(count_template_index()),
@@ -31,6 +29,8 @@ return {
         i(count_template_index()),
         t({
             "}",
+            "",
+            "\\begin{document}",
             "",
             "\\maketitle",
             "",
