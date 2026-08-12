@@ -21,6 +21,9 @@ vim.keymap.set("n", "<leader>bD", "<cmd>bdelete!<cr>", opts)
 -- diagnostics表示
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
 
+-- 保存
+vim.keymap.set("n", "<leader>w", "<cmd>write<cr>", opts)
+
 -- INSERT MODE
 -- Insert modeからNormal modeにもどる
 vim.keymap.set("i", "jk", "<Esc>", opts)
