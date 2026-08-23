@@ -26,15 +26,6 @@ return {
                 Rule("'", "", { "tex", "latex" }),
                 Rule("\"", "", { "tex", "latex" }),
 
-                -- Bash
-                Rule("then%s*", "fi", { "bash", "sh" }):use_regex(true):end_wise(function(opts)
-                    return string.match(opts.line, "^%s*if") ~= nil
-                end),
-                Rule("do%s*", "done", { "bash", "sh" }):use_regex(true):end_wise(function(opts)
-                    return string.match(opts.line, "^%s*for") ~= nil
-                            or string.match(opts.line, "^%s*while") ~= nil
-                end),
-
                 -- C++
                 Rule("/*", " */", { "c", "cpp" })
                     :with_cr(cond.none())
