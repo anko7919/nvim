@@ -2,6 +2,7 @@ local u = require("luasnip_utils")
 local s = u.s
 local i = u.i
 local f = u.f
+local t = u.t
 
 -- 関数の引数からDoxygen対応コメントを生成する
 local function create_doxy_arguments(args, _, _)

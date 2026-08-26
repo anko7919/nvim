@@ -37,5 +37,7 @@ vim.opt.timeoutlen = 400
 vim.opt.signcolumn = "yes"
 
 -- cmdの高さ
-vim.o.cmdheight = 1
+vim.opt.cmdheight = 0
+
+vim.opt.laststatus = 3
 
