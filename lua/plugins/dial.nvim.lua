@@ -29,8 +29,8 @@ return {
                 augend.constant.new{
                     elements = { "==", "!=", },
                     word = false,
-                    cyclid = true,
-                }
+                    cyclic = true,
+                },
             },
         }
     end
