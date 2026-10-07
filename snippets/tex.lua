@@ -9,7 +9,8 @@ return {
         t("\\documentclass{"),
         c(count_template_index(), {
             t("dorayaki-article"),
-            t("dorayaki-jarticle"),
+            t("dorayaki-ja"),
+            t("dorayaki-poster"),
         }),
         t({
             "}",
