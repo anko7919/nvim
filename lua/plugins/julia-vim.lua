@@ -1,7 +1,5 @@
 return {
-    {
-        "JuliaEditorSupport/julia-vim",
-        lazy = false,
-    },
+    "JuliaEditorSupport/julia-vim",
+    lazy = false,
 }
 

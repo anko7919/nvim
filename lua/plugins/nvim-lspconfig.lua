@@ -1,58 +1,45 @@
 return {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPre" },
-    dependencies = {
-        "mason.nvim",
-        { "mason-org/mason-lspconfig.nvim", config = function() end },
-        "folke/lazydev.nvim",
-        "hrsh7th/cmp-nvim-lsp",
-    },
-    opts = function()
-        local colors = {
-            error = vim.api.nvim_get_hl(0, { name = "DiagnosticError" }),
-            warn = vim.api.nvim_get_hl(0, { name = "DiagnosticWarn" }),
-            hint = vim.api.nvim_get_hl(0, { name = "DiagnosticHint" }),
-            info = vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" }),
+    event = "BufReadPost",
+    config = function()
+        local servers = {
+            "bashls",
+            "clangd",
+            "cmake",
+            "julials",
+            "markdown_oxide",
+            "rust_analyzer",
+            "texlab",
         }
-        local ret = {
-            diagnostics = {
-                underline = true,
-                update_in_insert = false,
-            },
-            severity_sort = true,
-            signs = {
-                text = {
-                    [vim.diagnostic.severity.ERROR] = colors.error,
-                    [vim.diagnostic.severity.WARN] = colors.warn,
-                    [vim.diagnostic.severity.HINT] = colors.hint,
-                    [vim.diagnostic.severity.INFO] = colors.info,
-                },
-            },
-            inlay_hints = {
-                enabled = true,
-            },
-
-            servers = {
-                ["clangd"] = require("plugins.lsp.clangd"),
-                ["cmake"] = require("plugins.lsp.cmake"),
-                ["julials"] = require("plugins.lsp.julials"),
-                ["pyright"] = require("plugins.lsp.pyright"),
-                ["rust_analyzer"] = require("plugins.lsp.rust_analyzer"),
-                ["texlab"] = require("plugins.lsp.texlab"),
-            },
-        }
-        return ret
-    end,
-
-    config = function(_, opts)
-        -- Luaはlazydev.nvimが設定してくれるので別で設定
-        vim.lsp.enable("lua_ls")
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
-        for server, server_opts in pairs(opts.servers) do
-            server_opts.capabilities = capabilities
-            vim.lsp.config(server, server_opts)
+        for _, server in ipairs(servers) do
             vim.lsp.enable(server)
         end
+
+        vim.api.nvim_create_autocmd("LspAttach", {
+            callback = function(ev)
+                local opts = { buffer = ev.buf }
+
+                local default_lsp_keys = {
+                    "gra",
+                    "gri",
+                    "grn",
+                    "grr",
+                    "grt",
+                    "grx",
+                    "gO",
+                }
+                for _, key in ipairs(default_lsp_keys) do
+                    pcall(vim.keymap.del, "n", key, opts)
+                end
+
+                local kset = vim.keymap.set
+                kset("n", "<leader>ld", vim.lsp.buf.definition, opts)
+                kset("n", "<leader>li", vim.lsp.buf.implementation, opts)
+                kset("n", "<leader>lt", vim.lsp.buf.type_definition, opts)
+                kset("n", "<leader>lc", vim.lsp.codelens.run, opts)
+                kset("n", "K", vim.lsp.buf.hover, opts)
+            end,
+        })
     end,
 }
 
