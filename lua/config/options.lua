@@ -14,9 +14,6 @@ vim.opt.hlsearch = true
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 25
 
--- クリップボード
-vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
-
 -- 分割ウィンドウ
 vim.opt.splitbelow = true
 vim.opt.splitright = true
