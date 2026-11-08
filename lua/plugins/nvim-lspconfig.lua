@@ -8,8 +8,10 @@ return {
             "cmake",
             "julials",
             "markdown_oxide",
+            "pyright",
             "rust_analyzer",
             "texlab",
+            "sagelsp",
         }
         for _, server in ipairs(servers) do
             vim.lsp.enable(server)
