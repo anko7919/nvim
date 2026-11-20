@@ -3,11 +3,14 @@ return {
     event = "BufReadPost",
     config = function()
         local servers = {
+            "autocorrect",
             "bashls",
             "clangd",
             "cmake",
+            "codebook",
+            "harper_ls",
             "julials",
-            "markdown_oxide",
+            "marksman",
             "pyright",
             "rust_analyzer",
             "texlab",
