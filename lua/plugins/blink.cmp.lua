@@ -7,7 +7,7 @@ return {
     opts = {
         keymap = {
             preset = "default",
-            ["<c-y>"] = { function(cmp) cmp.accept({ index = 1 }) end },
+            ["<c-cr>"] = { function(cmp) cmp.accept({ index = 1 }) end },
         },
         completion = { documentation = { auto_show = false } },
         sources = {
