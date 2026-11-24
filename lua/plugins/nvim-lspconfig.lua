@@ -1,6 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
         local servers = {
             "autocorrect",
@@ -10,6 +10,7 @@ return {
             "codebook",
             "harper_ls",
             "julials",
+            "lua_ls",
             "marksman",
             "pyright",
             "rust_analyzer",

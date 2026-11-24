@@ -1,7 +1,7 @@
 return {
     "nvim-mini/mini.comment",
     version = false,
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     opts = {},
 }
 
