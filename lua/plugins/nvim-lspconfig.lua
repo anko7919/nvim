@@ -3,7 +3,7 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     config = function()
         local servers = {
-            "autocorrect",
+            -- "autocorrect",
             "bashls",
             "clangd",
             "cmake",
